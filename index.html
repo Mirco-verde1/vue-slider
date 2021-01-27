@@ -11,6 +11,8 @@
 <body>
   <div id="container">
     <div class="slider-wrapper">
+
+
       <div  @click = "prevClick"  class="prev">
         <i class="fas fa-angle-left "></i>
       </div>
@@ -30,11 +32,12 @@
       </div>
       <div class="nav">
 
+        <!-- 'ciclo' l'array circleUnderImages-->
+        <!-- mi prendo il suo contenutonella classe 'circle' -->
 
-        <i class="fas fa-circle active first"></i>
-        <i class="fas fa-circle"></i>
-        <i class="fas fa-circle"></i>
-        <i class="fas fa-circle last"></i>
+        <i v-for = '(circle,index) in circleUnderImages' :class = 'circle'></i>
+
+
       </div>
     </div>
   </div>

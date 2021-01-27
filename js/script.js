@@ -14,15 +14,24 @@ var app = new Vue({
       "https://static.photocdn.pt/images/articles/2017/04/28/iStock-546424192.jpg"
 
     ],
+    idxImages: 0,
 
-     idxImages: 0,
+    circleUnderImages :[
+      "fas fa-circle",
+      "fas fa-circle",
+      "fas fa-circle",
+      "fas fa-circle",
 
-     firstImages:0,  //nel caso si aggiungesse un immagine o meno,
-                    //modificare il dato first o last.
-                    //i numeri corrispondono alla lunghezza dell'array
-                    //immagini  in questo momento
 
-     lastImages:3
+    ],
+
+
+    firstImages:0,  //nel caso si aggiungesse un immagine o meno,
+    //modificare il dato first o last.
+    //i numeri corrispondono alla lunghezza dell'array
+    //immagini  in questo momento
+
+    lastImages:3
 
   },
 
@@ -35,21 +44,24 @@ var app = new Vue({
         return this.idxImages += 1;
       }
       else {
-        return this.idxImages = 0;
+        return this.idxImages = this.firstImages;
       }
     },
 
 
     prevClick : function(immagini){
       if (this.idxImages === this.firstImages) {
-        return this.idxImages = 3;;
+        return this.idxImages = this.lastImages;
       }
       else {
-        return this.idxImages -= 1;;
+        return this.idxImages -= 1
+
       }
-    }
+    },
+
 
   }
+
 });
 
 
