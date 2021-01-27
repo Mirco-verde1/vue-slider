@@ -15,18 +15,39 @@ var app = new Vue({
 
     ],
 
-    idxImages: 0,
+     idxImages: 0,
+
+     firstImages:0,  //nel caso si aggiungesse un immagine o meno,
+                    //modificare il dato first o last.
+                    //i numeri corrispondono alla lunghezza dell'array
+                    //immagini  in questo momento
+
+     lastImages:3
 
   },
 
   methods:{
-   nextClick: function(){
-     return this.idxImages += 1;
-   },
 
-   prevClick : function(){
-     return this.idxImages -= 1;
-   }
+    //Funzioni con il quale scorro in loop le immagini
+    nextClick: function(immagini){
+
+      if (this.idxImages < this.lastImages) {
+        return this.idxImages += 1;
+      }
+      else {
+        return this.idxImages = 0;
+      }
+    },
+
+
+    prevClick : function(immagini){
+      if (this.idxImages === this.firstImages) {
+        return this.idxImages = 3;;
+      }
+      else {
+        return this.idxImages -= 1;;
+      }
+    }
 
   }
 });

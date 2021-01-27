@@ -21,7 +21,7 @@
     text-align: center;
 }
 .slider-wrapper .images img {
-    
+    height: 550px;
     width: 60%;
 }
 .slider-wrapper .images img.active {
