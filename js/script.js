@@ -1,66 +1,62 @@
 
 var app = new Vue({
-  el: '#container',
-  data:{
+ el: '#container',
+ data:{
 
-    immagini:[
+   immagini:[
 
-      "https://images.pexels.com/photos/371633/pexels-photo-371633.jpeg?cs=srgb&dl=clouds-country-daylight-371633.jpg&fm=jpg",
+     "https://images.pexels.com/photos/371633/pexels-photo-371633.jpeg?cs=srgb&dl=clouds-country-daylight-371633.jpg&fm=jpg",
 
-      "https://static.photocdn.pt/images/articles/2017/04/28/iStock-646511634.jpg",
+     "https://static.photocdn.pt/images/articles/2017/04/28/iStock-646511634.jpg",
 
-      "https://cdn.mos.cms.futurecdn.net/FUE7XiFApEqWZQ85wYcAfM.jpg",
+     "https://cdn.mos.cms.futurecdn.net/FUE7XiFApEqWZQ85wYcAfM.jpg",
 
-      "https://static.photocdn.pt/images/articles/2017/04/28/iStock-546424192.jpg"
+     "https://static.photocdn.pt/images/articles/2017/04/28/iStock-546424192.jpg"
 
-    ],
-    idxImages: 0,
+   ],
 
-    circleUnderImages :[
-      "fas fa-circle",
-      "fas fa-circle",
-      "fas fa-circle",
-      "fas fa-circle",
+   firstImages:0, 
 
 
-    ],
+   idxImages: 0,
+
+   circleUnderImages :[
+     "fas fa-circle",
+     "fas fa-circle",
+     "fas fa-circle",
+     "fas fa-circle",
 
 
-    firstImages:0,  //nel caso si aggiungesse un immagine o meno,
-    //modificare il dato first o last.
-    //i numeri corrispondono alla lunghezza dell'array
-    //immagini  in questo momento
+   ]
 
-    lastImages:3
+ },
 
-  },
+ methods:{
 
-  methods:{
+   //Funzioni con il quale scorro in loop le immagini
+   nextClick: function(immagini){
 
-    //Funzioni con il quale scorro in loop le immagini
-    nextClick: function(immagini){
-
-      if (this.idxImages < this.lastImages) {
-        return this.idxImages += 1;
-      }
-      else {
-        return this.idxImages = this.firstImages;
-      }
-    },
+     if (this.idxImages < this.immagini.length -1) {
+       return this.idxImages += 1;
+     }
+     else {
+       return this.idxImages = this.firstImages;
+     }
+   },
 
 
-    prevClick : function(immagini){
-      if (this.idxImages === this.firstImages) {
-        return this.idxImages = this.lastImages;
-      }
-      else {
-        return this.idxImages -= 1
+   prevClick : function(immagini){
+     if (this.idxImages === this.firstImages) {
+       return this.idxImages = this.immagini.length -1;
+     }
+     else {
+       return this.idxImages -= 1
 
-      }
-    },
+     }
+   },
 
 
-  }
+ }
 
 });
 

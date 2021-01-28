@@ -13,7 +13,7 @@
     <div class="slider-wrapper">
 
 
-      <div  @click = "prevClick"  class="prev">
+      <div  @click = "prevClick" @click="changeColor" class="prev">
         <i class="fas fa-angle-left "></i>
       </div>
       <!--
@@ -35,9 +35,10 @@
         <!-- 'ciclo' l'array circleUnderImages-->
         <!-- mi prendo il suo contenutonella classe 'circle' -->
 
-        <i v-for = '(circle,index) in circleUnderImages' :class = 'circle'></i>
+        <i v-for ='(circle,index) in circleUnderImages' :class = 'circle'></i>
 
 
+       </div>
       </div>
     </div>
   </div>
